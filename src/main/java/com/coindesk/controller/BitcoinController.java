@@ -37,7 +37,7 @@ public class BitcoinController {
        return service.fetchAndSaveBitcoinPrices();
     }
 
-    @GetMapping("/newapi")
+    @PostMapping("/newapi")
     public NewApiResponse getCustomBitcoinInfo() {
         return service.fetchAndTransform();
     }
@@ -57,7 +57,7 @@ public class BitcoinController {
     }
     
     //新增資料
-    @PostMapping("/bitcoin")
+    @PostMapping("/bitcoin/insertCurency")
     public CurrencyEntity create(@RequestBody CurrencyDTO  CurrencyDTO) {
         return service.create(CurrencyDTO);
     }
